@@ -13,9 +13,7 @@ module.exports = () => {
 
         var dbLogin = config.database.login;
         var dbPassword = config.database.password;
-        // console.warn(`DB URL: mongodb://${dbLogin}:${dbPassword}@ds121371.mlab.com:21371/blog `);
         mongoose.connect(`mongodb://${dbLogin}:${dbPassword}@ds121371.mlab.com:21371/blog`);
-
         //useMongoClient: true
     });
 };
