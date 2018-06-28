@@ -16,8 +16,10 @@
 </p>
 
 <ul>
-    <% arr.forEach(function(arrItem){ %>
-        <%- include('user', {user: arrItem}) %>
+    <% locals.posts.forEach(function(post){ %>
+        <li>
+            Post: <%= post %>
+        </li>
     <% }); %>
 </ul>
 

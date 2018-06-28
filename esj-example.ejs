@@ -1,0 +1,5 @@
+
+# Array.forEach && include('user')
+<% locals.posts.forEach(function(post){ %>
+    <%- include('user', {user: post}) %>
+<% }); %>
