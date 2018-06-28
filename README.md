@@ -8,3 +8,8 @@
 ## Git:
     git remote add blog git@github.com:arturkat/nodeblog.git
     git push -u blog master
+    
+    
+### INIT
+    npm i
+    ** install ESLINT plugin to IDE
