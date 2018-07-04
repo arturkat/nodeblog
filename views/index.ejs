@@ -1,17 +1,25 @@
 <%- include layout/header -%>
 
-<h1>Hello</h1>
 
-<p>
-    <a href="/create">Create</a>
-</p>
+<div class="main">
+    <h1>Hello</h1>
 
-<ul>
-    <% locals.posts.forEach(function(post){ %>
-        <li>
-            Post: <%= post %>
-        </li>
-    <% }); %>
-</ul>
+    <div class="container">
+        <div class="content">
+            content
+        </div>
+        <div class="sidebar">
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p>
+            <a href="/create">Create</a>
+        </p>
+    </div>
+</div>
+
 
 <%- include layout/footer -%>
