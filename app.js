@@ -69,6 +69,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/try', (req, res) => {
+    res.render('try');
+});
+
 app.get('/hi', (req, res) => {
     res.render('hi');
 });
