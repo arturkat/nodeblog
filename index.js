@@ -1,3 +1,5 @@
+/* this file isn't in use */
+
 const app = require('./app')
 const database = require('./database')
 const config = require('./config')
@@ -13,6 +15,4 @@ database()
     .catch(() => {
         console.error('Unable to connect to database')
         process.exit(1)
-    });
-
-// tess
+    })

@@ -1,1 +1,1 @@
-console.log('Hi scripts');
+alert("APP.JS FRONTEND");
