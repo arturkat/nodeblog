@@ -66,7 +66,37 @@ app.use(
 
 /* ROUTERS */
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('pages/homepage');
+});
+app.get('/page1', (req, res) => {
+    res.render('pages/page1');
+});
+app.get('/page2', (req, res) => {
+    res.render('pages/page2');
+});
+app.get('/page3', (req, res) => {
+    res.render('pages/page3');
+});
+app.get('/page4', (req, res) => {
+    res.render('pages/page4');
+});
+app.get('/page5', (req, res) => {
+    res.render('pages/page5');
+});
+app.get('/page6', (req, res) => {
+    res.render('pages/page6');
+});
+app.get('/page7', (req, res) => {
+    res.render('pages/page7');
+});
+app.get('/page8', (req, res) => {
+    res.render('pages/page8');
+});
+app.get('/page9', (req, res) => {
+    res.render('pages/page9');
+});
+app.get('/page10', (req, res) => {
+    res.render('pages/page10');
 });
 
 app.get('/try', (req, res) => {
