@@ -40,6 +40,6 @@
 
 ### Manage Node Versions
 
-nvm install <version> Download and install a <version>
-nvm use <version> Modify PATH to use <version>
-nvm ls List versions (installed versions are blue)
+    nvm install <version> Download and install a <version>
+    nvm use <version> Modify PATH to use <version>
+    nvm ls List versions (installed versions are blue)
