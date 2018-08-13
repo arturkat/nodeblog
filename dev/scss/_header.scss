@@ -1,9 +1,14 @@
 .header-nav {
-    font-size: 18px;
     padding-top: 0;
     padding-bottom: 0;
+    background-color: #343a40;
+    box-shadow: 0 0 0 2px #a70010;
     .navbar-brand {
-        margin-right: 25px;
+        margin-right: 30px;
+        transition: all 0.5s;
+        &:hover {
+            transform: rotate(-5deg) translate(4px);
+        }
         img {
             width: 45px;
         }
@@ -12,15 +17,44 @@
         align-items: center;
 
         .nav-item {
-            margin-right: 20px;
+            position: relative;
+            padding: 10px 20px;
+            font-size: 15px;
             letter-spacing: 0.05em;
+            text-transform: uppercase;
+            // font-family: 'RussoOne-Regular';
+            font-family: 'Aldrich-Regular';
+            &:hover:not(.active) {
+                &:after {
+                    width: 100%;
+                }
+            }
+            &:after {
+                content: '';
+                width: 0;
+                height: 2px;
+                background-color: #f74e5ed1;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all 1s;
+            }
             &.active {
-                padding: 10px 14px;
-                border-radius: 2px;
-                background: #171717;
+                border-radius: 1px;
+                //border-bottom: 2px solid #f74e5ed1;
+                // background: #171717;
+                background: #555e67;
+                font-weight: 600;
+                &:after {
+                    width: 100%;
+                }
             }
             &:last-of-type {
                 margin-right: 0;
+            }
+
+            .nav-link {
+                color: #fff;
             }
         }
     }
