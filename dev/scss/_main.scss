@@ -1,3 +1,19 @@
+html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    color: $blackColor;
+    //background-color: $whiteColor;
+    //padding-top: $headerHeight + $freeSpace;
+    background-color: #fdfdfd;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -28,8 +44,4 @@
             }
         }
     }
-}
-
-body {
-    background-color: black;
 }
