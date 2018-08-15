@@ -131,6 +131,39 @@ app.post('/create', (req, res) => {
 
     res.redirect('/');
 });
+
+app.get('/search', (req, res) => res.render('search'));
+app.post('/search', (req, res) => {
+    // http://mongoosejs.com/docs/2.7.x/docs/finding-documents.html
+    // data library - https://stackoverflow.com/questions/38182501/how-to-get-current-datetime-with-format-y-m-d-hms-using-node-datetime-library/38182551
+    const number = req.body.number;
+
+    Post.find({})
+        .then(posts => {
+            console.log(posts);
+            res.render('search', {
+                posts: posts
+            });
+        })
+        .catch(() => {
+            res.redirect('search', {
+                error: 'Ничего не найдено по вашему запросу.'
+            });
+        });
+
+    // Post.findOne({ _id: '5b350aaa8cabf41ec4df9e37' })
+    //     .then(posts => {
+    //         console.log(posts);
+    //         res.render('search', {
+    //             posts: posts
+    //         });
+    //     })
+    //     .catch(() => {
+    //         res.redirect('search', {
+    //             error: 'Ничего не найдено по вашему запросу.'
+    //         });
+    //     });
+});
 /* ROUTERS _END*/
 
 /* ERROR HANDLERS */

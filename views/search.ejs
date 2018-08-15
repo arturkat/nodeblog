@@ -1,0 +1,26 @@
+<%- include ./layout/header -%>
+
+    <div class="main container search-page">
+        <h1>ОТСЛЕДИТЬ ГРУЗ</h1>
+        <form method="post" action="/search">
+            <div class="form-group">
+                <label for="numberInput">Номер накладной</label>
+                <input name="number" type="text" id="numberInput" class="form-control" placeholder="№ required">
+                <small id="numberHelp" class="form-text text-muted">Введите ваш номер, что бы отследить груз</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Проверить</button>
+        </form>
+
+
+        <div class="alert alert-danger" role="alert">
+            <%= locals.error %>
+        </div>
+
+        <div class="alert alert-success" role="alert">
+            <%= locals.posts %>
+        </div>
+
+    </div>
+
+
+    <%- include ./layout/footer -%>
