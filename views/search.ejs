@@ -1,26 +1,53 @@
-<%- include ./layout/header -%>
+<%- include('./layout/header', {headerMenuActive: 'search'}) %>
 
     <div class="main container search-page">
         <h1>ОТСЛЕДИТЬ ГРУЗ</h1>
         <form method="post" action="/search">
             <div class="form-group">
                 <label for="numberInput">Номер накладной</label>
-                <input name="number" type="text" id="numberInput" class="form-control" placeholder="№ required">
+                <input name="trackID" type="text" id="numberInput" class="form-control" placeholder="№ required">
                 <small id="numberHelp" class="form-text text-muted">Введите ваш номер, что бы отследить груз</small>
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Проверить</button>
         </form>
 
 
-        <div class="alert alert-danger" role="alert">
-            <%= locals.error %>
-        </div>
+        <% if (locals.error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= locals.error %>
+            </div>
+        <% } %>
 
-        <div class="alert alert-success" role="alert">
-            <%= locals.posts %>
-        </div>
+        <% if (locals.products) { %>
+            <ul class="list-group list-group-flush">
+                <% if (locals.products.trackId) { %>
+                    <li class="list-group-item">Track ID: <%= locals.products.trackId %></li>
+                <% } %>
+                <% if (locals.products.trackId) { %>
+                    <li class="list-group-item">Track Type: <%= locals.products.trackType %></li>
+                <% } %>
+                <% if (locals.products.trackId) { %>
+                    <li class="list-group-item">Weight: <%= locals.products.weight %></li>
+                <% } %>
+                <% if (locals.products.trackId) { %>
+                    <li class="list-group-item">From: <%= locals.products.from %></li>
+                <% } %>
+                <% if (locals.products.trackId) { %>
+                    <li class="list-group-item">To: <%= locals.products.to %></li>
+                <% } %>
+            </ul>
+            <table class="table table-striped">
+                <tbody>
+                    <% for(var i=0; i < locals.products.travell.length; i++) {%>
+                        <tr>
+                            <td><%= locals.products.travell[i]['date'] %></td>
+                            <td><%= locals.products.travell[i]['msg'] %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        <% } %>
 
     </div>
 
-
-    <%- include ./layout/footer -%>
+<%- include ./layout/footer -%>

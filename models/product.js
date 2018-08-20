@@ -3,12 +3,23 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema(
     {
-        title: {
-            type: String,
-            required: true
-        },
-        body: {
+        trackId: {
             type: String
+        },
+        trackType: {
+            type: String
+        },
+        weight: {
+            type: String
+        },
+        from: {
+            type: String
+        },
+        to: {
+            type: String
+        },
+        travell: {
+            type: Array
         }
     },
     {
@@ -21,4 +32,4 @@ schema.set('toJSON', {
     virtuals: true
 });
 
-module.exports = mongoose.model('Post', schema);
+module.exports = mongoose.model('Product', schema);

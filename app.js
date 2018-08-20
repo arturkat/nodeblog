@@ -18,10 +18,14 @@ mongoose.connection
 mongoose.connect(
     `mongodb://${config.database.login}:${
         config.database.password
-    }@ds121371.mlab.com:21371/blog`
+    }@ds225492.mlab.com:25492/ref`
+    //mongodb://<dbuser>:<dbpassword>@ds121371.mlab.com:21371/blog
+    //mongodb://<dbuser>:<dbpassword>@ds261040.mlab.com:61040/track
+    //mongodb://<dbuser>:<dbpassword>@ds225492.mlab.com:25492/ref
 );
 // Mongoose MODELS
-const Post = require('./models/post');
+// const Post = require('./models/post');
+const Product = require('./models/product');
 /* DATABASE _end */
 
 /* EXPRESS */
@@ -110,24 +114,24 @@ app.get('/hi', (req, res) => {
 app.get('/posts', (req, res) => {
     console.log(`__dirname = ${__dirname}`);
 
-    Post.find({}).then(posts => {
-        console.log(posts);
-        res.render('index', {
-            posts: posts
-        });
-    });
+    // Post.find({}).then(posts => {
+    //     console.log(posts);
+    //     res.render('index', {
+    //         posts: posts
+    //     });
+    // });
 });
 
 app.get('/create', (req, res) => res.render('create'));
 app.post('/create', (req, res) => {
     const { title, body } = req.body;
 
-    Post.create({
-        title: title,
-        body: body
-    }).then(post => {
-        console.log(post);
-    });
+    // Post.create({
+    //     title: title,
+    //     body: body
+    // }).then(post => {
+    //     console.log(post);
+    // });
 
     res.redirect('/');
 });
@@ -136,26 +140,12 @@ app.get('/search', (req, res) => res.render('search'));
 app.post('/search', (req, res) => {
     // http://mongoosejs.com/docs/2.7.x/docs/finding-documents.html
     // data library - https://stackoverflow.com/questions/38182501/how-to-get-current-datetime-with-format-y-m-d-hms-using-node-datetime-library/38182551
-    const number = req.body.number;
 
-    Post.find({})
-        .then(posts => {
-            console.log(posts);
-            res.render('search', {
-                posts: posts
-            });
-        })
-        .catch(() => {
-            res.redirect('search', {
-                error: 'Ничего не найдено по вашему запросу.'
-            });
-        });
-
-    // Post.findOne({ _id: '5b350aaa8cabf41ec4df9e37' })
-    //     .then(posts => {
-    //         console.log(posts);
+    // Product.findOne({})
+    //     .then(products => {
+    //         console.log(products);
     //         res.render('search', {
-    //             posts: posts
+    //             products: products
     //         });
     //     })
     //     .catch(() => {
@@ -163,6 +153,22 @@ app.post('/search', (req, res) => {
     //             error: 'Ничего не найдено по вашему запросу.'
     //         });
     //     });
+
+    //5b7a98a4e7179a69ea61817f
+    //5b7a98b3e7179a69ea618186
+    const trackID = req.body.trackID;
+    Product.findOne({ _id: trackID })
+        .then(products => {
+            console.log(products);
+            res.render('search', {
+                products: products
+            });
+        })
+        .catch(() => {
+            res.render('search', {
+                error: 'Ничего не найдено по вашему запросу.'
+            });
+        });
 });
 /* ROUTERS _END*/
 

@@ -3,6 +3,26 @@
     padding-bottom: 50px;
 
     .btn {
-        margin-top: 40px;
+        margin-top: 20px;
+    }
+
+    .alert-danger {
+        margin-top: 20px;
+    }
+
+    .list-group {
+        padding: 0 1%;
+        margin-top: 10px;
+        // align-items: center;
+        .list-group-item {
+            padding: 0.75rem;
+            background-color: transparent;
+            &:first-of-type {
+                border-top: none;
+            }
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
     }
 }
