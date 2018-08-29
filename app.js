@@ -35,7 +35,9 @@ const app = express();
 // set for ejs
 app.set('view engine', 'ejs');
 // use body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 // use for my static assets
 app.use(staticAsset(path.join(__dirname, 'public')));
@@ -69,6 +71,21 @@ app.use(
 /* SETS AND USES _END*/
 
 /* ROUTERS */
+app.get('/p1', (req, res) => {
+    res.render('pages/p1');
+});
+app.get('/p2', (req, res) => {
+    res.render('pages/p2');
+});
+app.get('/p3', (req, res) => {
+    res.render('pages/p3');
+});
+app.get('/p4', (req, res) => {
+    res.render('pages/p4');
+});
+app.get('/p5', (req, res) => {
+    res.render('pages/p5');
+});
 app.get('/', (req, res) => {
     res.render('pages/homepage');
 });
@@ -124,7 +141,10 @@ app.get('/posts', (req, res) => {
 
 app.get('/create', (req, res) => res.render('create'));
 app.post('/create', (req, res) => {
-    const { title, body } = req.body;
+    const {
+        title,
+        body
+    } = req.body;
 
     // Post.create({
     //     title: title,
@@ -157,7 +177,9 @@ app.post('/search', (req, res) => {
     //5b7a98a4e7179a69ea61817f
     //5b7a98b3e7179a69ea618186
     const trackID = req.body.trackID;
-    Product.findOne({ _id: trackID })
+    Product.findOne({
+            _id: trackID
+        })
         .then(products => {
             console.log(products);
             res.render('search', {

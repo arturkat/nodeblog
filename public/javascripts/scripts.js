@@ -1,1 +1,1 @@
-var $=window.jQuery;$(document).ready(function(){window.console.log("JS is ready!")});
+var $=window.jQuery;$(document).ready(function(){window.console.log("JS is ready!"),function(){function o(){var o=$(document).scrollTop(),n=$(".header-nav");o>0?n.addClass("scrolled"):n.removeClass("scrolled")}o(),$(document).on("scroll",o)}()});
