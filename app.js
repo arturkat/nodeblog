@@ -192,6 +192,26 @@ app.post('/search', (req, res) => {
             });
         });
 });
+
+app.post('/p2', (req, res) => {
+    //5b7a98a4e7179a69ea61817f
+    //5b7a98b3e7179a69ea618186
+    const trackID = req.body.trackID;
+    Product.findOne({
+            _id: trackID
+        })
+        .then(products => {
+            console.log(products);
+            res.render('pages/p2', {
+                products: products
+            });
+        })
+        .catch(() => {
+            res.render('pages/p2', {
+                error: 'Ничего не найдено по вашему запросу.'
+            });
+        });
+});
 /* ROUTERS _END*/
 
 /* ERROR HANDLERS */
