@@ -10,7 +10,9 @@
         "nodemon-dev": "cross-env nodemon app.js",
         "env": "npm-run-all --parallel --continue-on-error gulp-env nodemon-env",
         "gulp-env": "cross-env gulp",
-        "nodemon-env": "cross-env nodemon app.js"
+        "nodemon-env": "cross-env nodemon app.js",
+        "prod": "npm-run-all --parallel --continue-on-error gulp-dev nodemon-prod",
+        "nodemon-prod": "cross-env PORT=80 node app.js"
     },
     "author": "",
     "license": "ISC",
