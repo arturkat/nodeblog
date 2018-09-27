@@ -12,7 +12,7 @@
         "gulp-env": "cross-env gulp",
         "nodemon-env": "cross-env nodemon app.js",
         "prod": "npm-run-all --parallel --continue-on-error gulp-dev nodemon-prod",
-        "nodemon-prod": "cross-env node app.js"
+        "nodemon-prod": "cross-env forever start app.js"
     },
     "author": "",
     "license": "ISC",
