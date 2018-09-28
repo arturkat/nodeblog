@@ -8,7 +8,7 @@ dotenv.config({
 
 module.exports = {
     // PORT: process.env.PORT || 3000,
-    PORT: 80,
+    PORT: 3000,
     IS_PRODUCTION: process.env.NODE_ENV === 'production',
     MONGO_URL: 'mongodb://localhost/blog',
     database: {
