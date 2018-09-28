@@ -193,7 +193,13 @@ app.get('/', (req, res) => {
 app.get('/index.html', (req, res) => {
     res.redirect('/');
 });
+app.get('/en', (req, res) => {
+    res.render('pages/p1_en');
+});
 
+app.get('/track-en', (req, res) => {
+    res.render('pages/p2_en');
+});
 app.get('/track', (req, res) => {
     res.render('pages/p2');
 });
@@ -226,6 +232,41 @@ app.post('/track', (req, res) => {
             });
         });
 });
+app.post('/track-en', (req, res) => {
+    //5b7a98a4e7179a69ea61817f
+    //5b7a98b3e7179a69ea618186
+    const trackID = req.body.trackID;
+    Product.findOne({
+            trackCode: trackID
+        })
+        .then(products => {
+            console.log('---Product.findOne.then');
+            console.log(products);
+            if (!!products) {
+                res.render('pages/p2_en', {
+                    products: products
+                });
+            } else {
+                console.log('---Product.findOne.catch');
+                res.render('pages/p2_en', {
+                    error: 'Nothing was found at his request.'
+                });
+            }
+
+        })
+        .catch(() => {
+            console.log('---Product.findOne.catch');
+            res.render('pages/p2_en', {
+                error: 'Nothing was found at his request.'
+            });
+        });
+});
+
+
+// 404
+app.get('/error-en', (req, res) => {
+    res.render('pages/p3_en');
+});
 /* ROUTERS _END*/
 
 /* ERROR HANDLERS */
@@ -240,10 +281,14 @@ app.use((req, res, next) => {
 // eslint-disable-next-line no-unused-vars
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
-    res.render('error', {
+    res.render('pages/p3', {
         message: error.message,
         error: !config.IS_PRODUCTION ? error : {}
     });
+    // res.render('error', {
+    //     message: error.message,
+    //     error: !config.IS_PRODUCTION ? error : {}
+    // });
 });
 /* ERROR HANDLERS _END*/
 

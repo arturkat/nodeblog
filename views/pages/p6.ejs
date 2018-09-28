@@ -1233,7 +1233,7 @@
                     </div>
                     <div class="logo">
                         <span>
-                            <a href="/"><img class="btMainLogo" src="wp-content/uploads/sites/4/2015/11/hm-logo.png" alt="Home movers"><img class="btAltLogo" src="wp-content/uploads/sites/4/2015/11/hm-logo-white.png" alt="Home movers"></a> </span>
+                            <a href="index.html"><img class="btMainLogo" src="wp-content/uploads/sites/4/2015/11/hm-logo.png" alt="Home movers"><img class="btAltLogo" src="wp-content/uploads/sites/4/2015/11/hm-logo-white.png" alt="Home movers"></a> </span>
                     </div><!-- /logo -->
                     <div class="menuPort">
                         <div class="topBarInMenu">
@@ -1260,11 +1260,7 @@
                                 </li>
 
                                 <li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-70">
-                                    <a href="/track">Отслеживание</a>
-                                </li>
-
-                                <li id="menu-item-70"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-70">
-                                    <a style="color: #ff8802;" href="/error-en">en</a>
+                                    <a href="/track">treking</a>
                                 </li>
                             </ul>
                         </nav>
@@ -1300,30 +1296,58 @@
                 <section id="bt_section5b7fda5cb4c17" data-parallax="-0.1" data-parallax-offset="0" class="boldSection topMoreSpaced bottomSpaced btDarkSkin gutter inherit btParallax wBackground cover" 
                          style="min-height: 100vh; background-image: url(&quot;wp-content/uploads/sites/4/2015/11/Transparent-background-with-dots.png&quot;); background-position: 50% -10.5894px;">
                     
-                    <div id="four-ou-four" class="main container search-page">
-                        <h1>404</h1>
-                        <h4>страница не найдена</h4>
+                    <div class="main container search-page">
+                        <h1>ОТСЛЕДИТЬ ГРУЗ</h1>
+                        <form method="post" action="/track">
+                            <div class="form-group">
+                                <input name="trackID" type="text" id="numberInput" class="form-control" placeholder="№ ">
+                                <small id="numberHelp" class="form-text text-muted">Введите ваш номер, что бы отследить груз</small>
+                            </div>
+                            <button type="submit" id="numberButton" class="btn btn-primary btn-lg btn-block">отследить</button>
+                        </form>
+                
+                
+                        <% if (locals.error) { %>
+                            <div class="alert alert-danger" role="alert" style="margin-top: 30px;color: #ffffff;background-color: #e62b0d;border: 1px solid #ff8800c9;padding: 0.75rem 1.25rem;border-radius: .25rem;">
+                                <%= locals.error %>
+                            </div>
+                        <% } %>
+                
+                        <% if (locals.products) { %>
+                            <ul class="list-group list-group-flush">
+                                <% if (locals.products.trackId) { %>
+                                    <li class="list-group-item">Track ID: <%= locals.products.trackId %></li>
+                                <% } %>
+                                <% if (locals.products.trackId) { %>
+                                    <li class="list-group-item">Track Type: <%= locals.products.trackType %></li>
+                                <% } %>
+                                <% if (locals.products.trackId) { %>
+                                    <li class="list-group-item">Weight: <%= locals.products.weight %></li>
+                                <% } %>
+                                <% if (locals.products.trackId) { %>
+                                    <li class="list-group-item">From: <%= locals.products.from %></li>
+                                <% } %>
+                                <% if (locals.products.trackId) { %>
+                                    <li class="list-group-item">To: <%= locals.products.to %></li>
+                                <% } %>
+                            </ul>
+                            <table class="table table-striped" id="trackTable">
+                                <tbody>
+                                    <% for(var i=0; i < locals.products.travell.length; i++) {%>
+                                        <tr>
+                                            <td><%= locals.products.travell[i]['date'] %></td>
+                                            <td><%= locals.products.travell[i]['msg'] %></td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        <% } %>
                     </div>
                     <style>
-                        #bt_section5b7fda5cb4c17,
-                        #four-ou-four {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                        }
-                        #four-ou-four h1 {
-                            font-size: 180px;
-                            color: #ff8800;
-                        }
-                        #four-ou-four h4 {
-                            font-size: 40px;
-                        }
-
                         .search-page {
                             max-width: 1200px;
                             margin: 0 auto;
-                            margin-top: 0;
+                            margin-top: 50px;
                         }
                         .search-page form #numberInput {
                             color: black;
