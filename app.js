@@ -202,15 +202,25 @@ app.post('/track', (req, res) => {
     //5b7a98b3e7179a69ea618186
     const trackID = req.body.trackID;
     Product.findOne({
-            _id: trackID
+            trackCode: trackID
         })
         .then(products => {
+            console.log('---Product.findOne.then');
             console.log(products);
-            res.render('pages/p2', {
-                products: products
-            });
+            if (!!products) {
+                res.render('pages/p2', {
+                    products: products
+                });
+            } else {
+                console.log('---Product.findOne.catch');
+                res.render('pages/p2', {
+                    error: 'Ничего не найдено по вашему запросу.'
+                });
+            }
+
         })
         .catch(() => {
+            console.log('---Product.findOne.catch');
             res.render('pages/p2', {
                 error: 'Ничего не найдено по вашему запросу.'
             });

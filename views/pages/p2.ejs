@@ -22,7 +22,7 @@
             "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/",
             "svgExt": ".svg",
             "source": {
-                "concatemoji": "http:\/\/cargo.bold-themes.com\/home-movers\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.5"
+                
             }
         };
         ! function(a, b, c) {
@@ -73,7 +73,7 @@
     </style>
     <link rel='stylesheet' id='contact-form-7-css' href='wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.3' type='text/css' media='all' data-viewport-units-buggyfill="ignore">
     <link rel='stylesheet' id='bt_cc_style-css' href='wp-content/plugins/bt_cost_calculator/style.min.css?ver=4.8.5' type='text/css' media='all' data-viewport-units-buggyfill="ignore">
-    <link rel='stylesheet' id='bt_dev_style-css' href='http://cargo.bold-themes.com/home-movers/wp-content/plugins/bt_dev/style.css?ver=4.8.5' type='text/css' media='all' data-viewport-units-buggyfill="ignore">
+   
     <link rel='stylesheet' id='bt_style_css-css' href='wp-content/themes/cargo/style.cargo.min.css?ver=4.8.5' type='text/css' media='all' data-viewport-units-buggyfill="ignore">
     <style id='bt_style_css-inline-css' type='text/css'>
         a:hover {
@@ -1202,7 +1202,7 @@
     <link rel='shortlink' href='index.html'>
     <link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed.json?url=http%3A%2F%2Fcargo.bold-themes.com%2Fhome-movers%2F">
     <link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed-1.json?url=http%3A%2F%2Fcargo.bold-themes.com%2Fhome-movers%2F&#038;format=xml">
-    <script>window.BTURI = "http://cargo.bold-themes.com/home-movers/wp-content/themes/cargo"; window.BTAJAXURL = "http://cargo.bold-themes.com/home-movers/wp-admin/admin-ajax.php";window.bt_text = [];window.bt_text.previous = 'previous';window.bt_text.next = 'next';</script>
+    
     <style></style>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -1246,17 +1246,17 @@
                         <nav>
                             <ul>
                                 <li id="menu-item-67" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-67">
-                                    <a href="#top">ГЛАВНАЯ</a>
+                                    <a href="/#top" class="lightbox">ГЛАВНАЯ</a>
                                 </li>
                                 <li id="menu-item-68" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68">
-                                    <a href="#about-us">О НАС</a>
+                                    <a href="/#about-us" class="lightbox">О НАС</a>
                                 </li>
                                 <li id="menu-item-69" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69">
-                                    <a href="#services">СЕРВИСЫ</a>
+                                    <a href="/#services" class="lightbox">СЕРВИСЫ</a>
                                 </li>
 
                                 <li id="menu-item-71" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-71">
-                                    <a href="#contact">КОНТАКТИ</a>
+                                    <a href="/#contact" class="lightbox">КОНТАКТИ</a>
                                 </li>
 
                                 <li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-70">
@@ -1303,12 +1303,12 @@
                                 <input name="trackID" type="text" id="numberInput" class="form-control" placeholder="№ ">
                                 <small id="numberHelp" class="form-text text-muted">Введите ваш номер, что бы отследить груз</small>
                             </div>
-                            <button type="submit" id="numberButton" class="btn btn-primary btn-lg btn-block">Найти</button>
+                            <button type="submit" id="numberButton" class="btn btn-primary btn-lg btn-block">отследить</button>
                         </form>
                 
                 
                         <% if (locals.error) { %>
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-danger" role="alert" style="margin-top: 30px;color: #ffffff;background-color: #e62b0d;border: 1px solid #ff8800c9;padding: 0.75rem 1.25rem;border-radius: .25rem;">
                                 <%= locals.error %>
                             </div>
                         <% } %>
@@ -1365,6 +1365,7 @@
                             -webkit-box-shadow: 0 0 0 1px #ff8800 inset, 0 1px 0 transparent inset;
                             box-shadow: 0 0 0 1px #ff8800 inset, 0 1px 0 transparent inset;
                             cursor: pointer;
+                            text-transform: uppercase;
                         }
                         .search-page form #numberButton:hover {
                             background: #d17000;
@@ -1433,39 +1434,48 @@
 
 
 
-            <section id="contact" data-parallax="0.1" data-parallax-offset="0" class="boldSection topSemiSpaced bottomSmallSpaced btDarkSkin gutter inherit btParallax" style="background-color: rgb(239, 112, 14); background-position: 50% 27.1584px;">
+            <section id="contact" data-parallax="0.1" data-parallax-offset="0" class="boldSection topSemiSpaced bottomSmallSpaced btDarkSkin gutter inherit btParallax"
+                style="background-color:#ef700e;">
                 <div class="port">
                     <div class="boldCell">
                         <div class="boldCellInner">
-                            <div class="boldRow  btTableRow">
-                                <div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextRight animate-fadein btMiddleVertical btDoublePadding animated" style="z-index: 10;">
+                            <div class="boldRow ">
+                                <div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextRight animate animate-fadein btMiddleVertical btDoublePadding" style="z-index: 10;">
                                     <div class="rowItemContent">
                                         <header class="header btClear medium  btAccentDash btRegularTitle">
                                             <p class="btSuperTitle">Ми будем довольны помочь </p>
                                             <div class="dash">
-                                                <h3><span class="headline">СВЯЖИТЕСЬ С НАМИ
-                                                    </span></h3>
+                                                <h3>
+                                                    <span class="headline">СВЯЖИТЕСЬ С НАМИ
+                                                    </span>
+                                                </h3>
                                             </div>
                                         </header>
                                     </div>
                                 </div>
-                                <div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft animate-fadein btMiddleVertical animated">
+                                <div class="rowItem col-md-3 col-sm-6 col-ms-12 btTextLeft animate animate-fadein btMiddleVertical">
                                     <div class="rowItemContent">
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
                                             <hr>
                                         </div>
                                         <div class="servicesItem  mediumIcon colorless borderlessIconType ">
                                             <div class="sIcon">
-                                                <div class="btIco medium colorless borderless"><a href="#" data-ico-cs="" class="btIcoHolder"></a></div>
+                                                <div class="btIco medium colorless borderless">
+                                                    <a href="javascript:void(0)" data-ico-cs="&#xe60f;" class="btIcoHolder"></a>
+                                                </div>
                                             </div>
                                             <div class="sTxt">
                                                 <header class="header btClear extrasmall">
                                                     <div class="dash">
-                                                        <h4><span class="headline">Колл центр</span></h4>
+                                                        <h4>
+                                                            <span class="headline">Колл центр</span>
+                                                        </h4>
                                                     </div>
                                                 </header>
-                                                <p>+1 555-676-1020
-                                                    <br><br></p>
+                                                <p>+380633280980
+                                                    <br>
+                                                    <br>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
@@ -1473,23 +1483,29 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rowItem btLeftBorder col-md-3 col-sm-6 col-ms-12 btTextLeft animate-fadein btMiddleVertical animated">
+                                <div class="rowItem btLeftBorder col-md-3 col-sm-6 col-ms-12 btTextLeft animate animate-fadein btMiddleVertical">
                                     <div class="rowItemContent">
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
                                             <hr>
                                         </div>
                                         <div class="servicesItem  mediumIcon colorless borderlessIconType ">
                                             <div class="sIcon">
-                                                <div class="btIco medium colorless borderless"><a href="#" data-ico-cs="" class="btIcoHolder"></a></div>
+                                                <div class="btIco medium colorless borderless">
+                                                    <a href="javascript:void(0)" data-ico-cs="&#xe610;" class="btIcoHolder"></a>
+                                                </div>
                                             </div>
                                             <div class="sTxt">
                                                 <header class="header btClear extrasmall">
                                                     <div class="dash">
-                                                        <h4><span class="headline">РАБОЧЕЕ ВРЕМЯ</span></h4>
+                                                        <h4>
+                                                            <span class="headline">РАБОЧЕЕ ВРЕМЯ</span>
+                                                        </h4>
                                                     </div>
                                                 </header>
-                                                <p>Mon-Sat 7AM-5PM
-                                                    <br>Sat 9AM-3PM<br></p>
+                                                <p>Пон-Пят 9-19
+                                                    <br>Суббота 9-18
+                                                    <br>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
@@ -1497,23 +1513,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rowItem btLeftBorder col-md-3 col-sm-6 col-ms-12 btTextLeft animate-fadein btMiddleVertical animated">
+                                <div class="rowItem btLeftBorder col-md-3 col-sm-6 col-ms-12 btTextLeft animate animate-fadein btMiddleVertical">
                                     <div class="rowItemContent">
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
                                             <hr>
                                         </div>
                                         <div class="servicesItem  mediumIcon colorless borderlessIconType ">
                                             <div class="sIcon">
-                                                <div class="btIco medium colorless borderless"><span data-ico-cs="" class="btIcoHolder"></span></div>
+                                                <div class="btIco medium colorless borderless">
+
+                                                    <a href="javascript:void(0)" data-ico-cs="&#xe663;" class="btIcoHolder"></a>
+                                                </div>
                                             </div>
                                             <div class="sTxt">
                                                 <header class="header btClear extrasmall">
                                                     <div class="dash">
-                                                        <h4><span class="headline">НАШЕ МЕСТО НАХОЖДЕНИЯ</span></h4>
+                                                        <h4>
+                                                            <span class="headline">НАШЕ МЕСТО НАХОЖДЕНИЯ</span>
+                                                        </h4>
                                                     </div>
                                                 </header>
-                                                <p>300 Kansas Ave NW
-                                                    <br>New Jersey<br></p>
+                                                <p>улица Милославськая, 2
+
+                                                    <br>Киев
+                                                    <br>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="btClear btSeparator topExtraSmallSpaced noBorder">
@@ -1526,6 +1550,8 @@
                     </div>
                 </div>
             </section><!-- id="contact" -->
+
+
 
 
         </div><!-- /contentWrap -->
@@ -1549,8 +1575,7 @@
     <script type='text/javascript'>
         /* <![CDATA[ */
         var _wpcf7 = {
-            "loaderUrl": "http:\/\/cargo.bold-themes.com\/home-movers\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif",
-            "sending": "Sending ..."
+           
         };
         /* ]]> */
     </script>
@@ -1563,7 +1588,7 @@
     <script type='text/javascript' src='wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='wp-includes/js/jquery/ui/slider.min.js?ver=1.11.4'></script>
     <script type='text/javascript' src='wp-content/plugins/bt_cost_calculator/jquery.ui.touch-punch.min.js?ver=4.8.5'></script>
-    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v&#038;sensor=false&#038;ver=4.8.5'></script>
+
     <script type='text/javascript' src='wp-content/plugins/cargo/bt_gmap.js?ver=4.8.5'></script>
     <script>
         window.viewportUnitsBuggyfill.init({
@@ -2153,8 +2178,7 @@
                 c.find('.btSubmitMessage').hide().html('Please wait...').fadeIn();
 
                 $.ajax({
-                    type: 'POST',
-                    url: 'http://cargo.bold-themes.com/home-movers/wp-admin/admin-ajax.php',
+                   
                     data: data,
                     async: true,
                     success: function(response) {
