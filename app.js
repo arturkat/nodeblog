@@ -235,7 +235,7 @@ app.post('/track', (req, res) => {
 app.post('/track-en', (req, res) => {
     //5b7a98a4e7179a69ea61817f
     //5b7a98b3e7179a69ea618186
-    const trackID = req.body.trackID;
+    const trackID = req.body.trackID.trim();
     Product.findOne({
             trackCode: trackID
         })
